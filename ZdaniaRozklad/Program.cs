@@ -32,40 +32,40 @@ words = arraySentence.Length;
 
 //id1 - odmiana słowa "wyraz"
 
-string id1;
+string wordForms1;
 if (words == 1)
 {
-    id1 = "wyraz";
+    wordForms1 = "wyraz";
 }
 
 else if ((words >= 2) && (words <= 4))
 {
-    id1 = "wyrazy";
+    wordForms1 = "wyrazy";
 }
 else
 {
-    id1 = "wyrazów";
+    wordForms1 = "wyrazów";
 }
 
 //id2 - odmiana słowa "znak"
 
-string id2;
+string wordForms2;
 if ((lenghtSentence >= 0) && (lenghtSentence == 1))
 {
-    id2 = "znak";
+    wordForms2 = "znak";
 }
 
 else if ((lenghtSentence >= 2) && (lenghtSentence <= 4))
 {
-    id2 = "znaki";
+    wordForms2 = "znaki";
 }
 else
 {
-    id2 = "znaków";
+    wordForms2 = "znaków";
 }
 
 
-Console.WriteLine($"\nTwoje zdanie ma {words} {id1} (i {lenghtSentence} {id2}).\n");
+Console.WriteLine($"\nTwoje zdanie ma {words} {wordForms1} (i {lenghtSentence} {wordForms2}).\n");
 
 foreach (string part in arraySentence)
 {
