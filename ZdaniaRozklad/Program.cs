@@ -8,11 +8,7 @@ string sentence = Console.ReadLine();
 
 int lenghtSentence = sentence.Length;
 
-sentence = sentence.Replace(",", " ");
-sentence = sentence.Replace(".", "");
-sentence = sentence.Replace("  ", " ");
-sentence = sentence.Replace("!", "");
-sentence = sentence.Replace("?", "");
+RemoveSpecialCharacters();
 
 string[] arraySentence = sentence.Split(' ');
 
@@ -85,4 +81,14 @@ if (valueOfWord >= 1)
 {
     Console.WriteLine("");
     Console.WriteLine($"Wartość użytych liczb równa się: {valueOfWord}.");
+}
+
+ void RemoveSpecialCharacters()
+{
+    sentence = sentence.Replace(",", " ");
+    sentence = sentence.Replace(".", "");
+    sentence = sentence.Replace("  ", " ");
+    sentence = sentence.Replace("!", "");
+    sentence = sentence.Replace("?", "");
+
 }
