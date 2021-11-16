@@ -1,3 +1,1 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-Console.WriteLine("Hello, World!");
+﻿Console.WriteLine("Witaj w programie do obliczania pól figur, by W. S.");
