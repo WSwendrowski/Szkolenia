@@ -1,39 +1,37 @@
-﻿Random random = new Random();
-int damagesOrc;
-int damagesHero;
-int round = 0;
-int orcLive = 10;
-int heroLive = 10;
-
-do
+﻿Console.WriteLine("Program do obliczania pól figur dla lamusów by Edek L.");
+Console.WriteLine("\nDostępne fugury to:\n\t1. Kwadrat\n\t2. Prostokąt\n\t3. Trójką\n\t4. Koło");
+Console.WriteLine("\nProszę wpisać numer figury:");
+string figure = Console.ReadLine();
+switch (figure)
 {
-    round += 1;
-    damagesOrc = random.Next(1, 11);
-    orcLive -= damagesOrc;
-    if (orcLive < 0)
-    {
-        orcLive = 0;
-    }
-    Console.WriteLine($"Round {round}.");
-    Console.WriteLine($"Monster was damaged and lost {damagesOrc} health and now has {orcLive} health.");
-
-    if (orcLive == 0) continue;
+    case = "1":
+            Console.WriteLine("\nWybraną figurą jest kwadrat.");
+            Console.WriteLine("\n\t Proszę podać długość boku kwadratu [cm]:");
+            string sideSquare = Console.ReadLine();
+            int fieldSquare = int.Parse(sideSquare) * int.Parse(sideSquare);
+            Console.WriteLine($"Pole kwadratu wynosi {fieldSquare} cm2.");
+            break;
+      
+            case = "2":
     
-        damagesHero = random.Next(1, 11);
-        heroLive -= damagesHero;
-        if (heroLive < 0)
-        { 
-            heroLive = 0;
-        }
-    Console.WriteLine($"Hero was damaged and lost {damagesHero} health and now has {heroLive} health.");
+            Console.WriteLine("\nWybraną figurą jest prostokąt.");
+            Console.WriteLine("\n\t Proszę podać długość prostokąta [cm]:");
+            string widthRactangle = Console.ReadLine();
+            Console.WriteLine("\n\t Proszę podać wysokość prostokąta [cm]:");
+            string highRactangle = Console.ReadLine();
+            break;
+      
 
-} while (orcLive > 0 && heroLive > 0);
+            case = "3":
+        
+            Console.WriteLine("\nWybraną figurą jest trójkąt.");
+            Console.WriteLine("\n\t Proszę podać szerokość podstawy trójkąta [cm]:");
+            string baseTriangle = Console.ReadLine();
+            Console.WriteLine("\n\t Proszę podać wysokość trójkąta [cm]:");
+            string highTriangle = Console.ReadLine();
+            break;
 
-if (orcLive > heroLive)
-{
-    Console.WriteLine("Orc win!");
-}
-else
-{
-    Console.WriteLine("Hero win!");
+    default:
+            Console.WriteLine("Nie rozpoznano figury.");
+
 }
