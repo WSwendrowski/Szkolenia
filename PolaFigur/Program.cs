@@ -4,15 +4,15 @@ Console.WriteLine("\nProszę wpisać numer figury:");
 string figure = Console.ReadLine();
 switch (figure)
 {
-    case = "1":
+    case "1":
             Console.WriteLine("\nWybraną figurą jest kwadrat.");
             Console.WriteLine("\n\t Proszę podać długość boku kwadratu [cm]:");
             string sideSquare = Console.ReadLine();
             int fieldSquare = int.Parse(sideSquare) * int.Parse(sideSquare);
             Console.WriteLine($"Pole kwadratu wynosi {fieldSquare} cm2.");
             break;
-      
-            case = "2":
+
+    case "2":
     
             Console.WriteLine("\nWybraną figurą jest prostokąt.");
             Console.WriteLine("\n\t Proszę podać długość prostokąta [cm]:");
@@ -22,7 +22,7 @@ switch (figure)
             break;
       
 
-            case = "3":
+    case "3":
         
             Console.WriteLine("\nWybraną figurą jest trójkąt.");
             Console.WriteLine("\n\t Proszę podać szerokość podstawy trójkąta [cm]:");
@@ -31,7 +31,6 @@ switch (figure)
             string highTriangle = Console.ReadLine();
             break;
 
-    default:
-            Console.WriteLine("Nie rozpoznano figury.");
+    
 
 }
