@@ -14,30 +14,16 @@ do
             break;
 
         case "2":
-
             RectangleField();
             break;
 
         case "3":
-
-            Console.WriteLine("\nWybraną figurą jest trójkąt.");
-            Console.WriteLine("\n\t Proszę podać szerokość podstawy trójkąta [cm]:");
-            string baseTriangle = Console.ReadLine();
-            Console.WriteLine("\n\t Proszę podać wysokość trójkąta [cm]:");
-            string highTriangle = Console.ReadLine();
-            decimal fieldTriangle = (decimal.Parse(baseTriangle) * decimal.Parse(highTriangle)) / 2;
-            Console.WriteLine($"Pole prostokąta wynosi {fieldTriangle} cm2.");
+            TriangleField();
             break;
 
         case "4":
-
-            Console.WriteLine("\nWybraną figurą jest koło.");
-            Console.WriteLine("\n\t Proszę podać promień koła [cm]:");
-            string radiusCircle = Console.ReadLine();
-            decimal fieldCircle = (decimal.Parse(radiusCircle) * decimal.Parse(radiusCircle)) * 3.14m;
-            Console.WriteLine($"Pole prostokąta wynosi {fieldCircle} cm2.");
+            CircleField();
             break;
-
 
         case "5":
             repeatPlease = false;
@@ -66,4 +52,24 @@ void RectangleField()
     decimal fieldRactangle = decimal.Parse(widthRactangle) * decimal.Parse(highRactangle);
     Console.WriteLine($"Pole prostokąta wynosi {fieldRactangle} cm2.");
     return;
+}
+
+void TriangleField()
+{
+    Console.WriteLine("\nWybraną figurą jest trójkąt.");
+    Console.WriteLine("\n\t Proszę podać szerokość podstawy trójkąta [cm]:");
+    string baseTriangle = Console.ReadLine();
+    Console.WriteLine("\n\t Proszę podać wysokość trójkąta [cm]:");
+    string highTriangle = Console.ReadLine();
+    decimal fieldTriangle = (decimal.Parse(baseTriangle) * decimal.Parse(highTriangle)) / 2;
+    Console.WriteLine($"Pole prostokąta wynosi {fieldTriangle} cm2.");
+}
+
+void CircleField()
+{
+    Console.WriteLine("\nWybraną figurą jest koło.");
+    Console.WriteLine("\n\t Proszę podać promień koła [cm]:");
+    string radiusCircle = Console.ReadLine();
+    decimal fieldCircle = (decimal.Parse(radiusCircle) * decimal.Parse(radiusCircle)) * 3.14m;
+    Console.WriteLine($"Pole prostokąta wynosi {fieldCircle} cm2.");
 }
