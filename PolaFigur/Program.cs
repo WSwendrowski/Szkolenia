@@ -10,22 +10,12 @@ do
     switch (figure)
     {
         case "1":
-            Console.WriteLine("\nWybraną figurą jest kwadrat.");
-            Console.WriteLine("\n\t Proszę podać długość boku kwadratu [cm]:");
-            string sideSquare = Console.ReadLine();
-            decimal fieldSquare = decimal.Parse(sideSquare) * decimal.Parse(sideSquare);
-            Console.WriteLine($"Pole kwadratu wynosi {fieldSquare} cm2.");
+            SquareField();
             break;
 
         case "2":
 
-            Console.WriteLine("\nWybraną figurą jest prostokąt.");
-            Console.WriteLine("\n\t Proszę podać długość prostokąta [cm]:");
-            string widthRactangle = Console.ReadLine();
-            Console.WriteLine("\n\t Proszę podać wysokość prostokąta [cm]:");
-            string highRactangle = Console.ReadLine();
-            decimal fieldRactangle = decimal.Parse(widthRactangle) * decimal.Parse(highRactangle);
-            Console.WriteLine($"Pole prostokąta wynosi {fieldRactangle} cm2.");
+            RectangleField();
             break;
 
         case "3":
@@ -55,3 +45,25 @@ do
     }
 
 } while (repeatPlease);
+
+void SquareField()
+{
+    Console.WriteLine("\nWybraną figurą jest kwadrat.");
+    Console.WriteLine("\n\t Proszę podać długość boku kwadratu [cm]:");
+    string sideSquare = Console.ReadLine();
+    decimal fieldSquare = decimal.Parse(sideSquare) * decimal.Parse(sideSquare);
+    Console.WriteLine($"Pole kwadratu wynosi {fieldSquare} cm2.");
+    return;
+}
+
+void RectangleField()
+{
+    Console.WriteLine("\nWybraną figurą jest prostokąt.");
+    Console.WriteLine("\n\t Proszę podać długość prostokąta [cm]:");
+    string widthRactangle = Console.ReadLine();
+    Console.WriteLine("\n\t Proszę podać wysokość prostokąta [cm]:");
+    string highRactangle = Console.ReadLine();
+    decimal fieldRactangle = decimal.Parse(widthRactangle) * decimal.Parse(highRactangle);
+    Console.WriteLine($"Pole prostokąta wynosi {fieldRactangle} cm2.");
+    return;
+}
