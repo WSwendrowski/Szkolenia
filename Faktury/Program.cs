@@ -9,5 +9,17 @@ Console.WriteLine($"Cena netto cebuli:\t {cenaCebuli} PLN");
 Console.WriteLine($"Cena netto pyrów:\t {cenaPyrow} PLN\n");
 Console.WriteLine("Przyszłem po:");
 
-string wyborKlienta;
-wyborKlienta = Console.ReadLine();
+string wyborAsortymentuKlienta;
+wyborAsortymentuKlienta = Console.ReadLine();
+
+Console.WriteLine("\nA ile kg:");
+
+string wyborIlosciKlineta;
+wyborIlosciKlineta = Console.ReadLine();
+
+ void Faktura()
+{
+    Console.WriteLine()
+}
+
+
