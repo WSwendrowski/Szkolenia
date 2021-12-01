@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZdaniaRozklad", "ZdaniaRozk
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "minutnik", "minutnik\minutnik.csproj", "{11529C9F-4CA2-4D85-99F2-620979FA0BCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolaFigur", "PolaFigur\PolaFigur.csproj", "{8C2C7A36-3AC4-4B64-A1BF-A6F6C7EBF48B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PolaFigur", "PolaFigur\PolaFigur.csproj", "{8C2C7A36-3AC4-4B64-A1BF-A6F6C7EBF48B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faktury", "Faktury\Faktury.csproj", "{391F69B1-C13E-408F-ACD2-6EB60F2C35AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{8C2C7A36-3AC4-4B64-A1BF-A6F6C7EBF48B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C2C7A36-3AC4-4B64-A1BF-A6F6C7EBF48B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C2C7A36-3AC4-4B64-A1BF-A6F6C7EBF48B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{391F69B1-C13E-408F-ACD2-6EB60F2C35AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391F69B1-C13E-408F-ACD2-6EB60F2C35AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391F69B1-C13E-408F-ACD2-6EB60F2C35AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391F69B1-C13E-408F-ACD2-6EB60F2C35AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
