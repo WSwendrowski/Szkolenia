@@ -2,6 +2,7 @@
 const decimal priceOnion = 3.99m;
 const decimal pricePotatos = 1.68m;
 
+
 Console.WriteLine("");
 Console.WriteLine("\tChcesz kupić cebulę (1) czy pyry (2)?");
 Console.WriteLine("");
@@ -21,11 +22,23 @@ clientChooseOfQty = Console.ReadLine();
 {
     string document = "FAKTURA";
     string placeOf = "Miejsce wystawienia";
-    string miejscowosc = "Gniezno";
+    string city = "Gniezno";
     string headingDate = "Data wystawienia";
+    DateTime thisDay = DateTime.Today;
+    string dataDay = ToString.thisDay;
 
 
-    Console.WriteLine("Miejsce wystawienia")
+    Console.WriteLine($"\n\t\t{document}\n");
+    var lineFirst = placeOf.PadRight(22);
+    lineFirst += city.PadRight(34);
+    Console.WriteLine(lineFirst);
+    Console.WriteLine("");
+
+    var secodLine = city.PadRight(22);
+    
+
+
+
 }
 
 
