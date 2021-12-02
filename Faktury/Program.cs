@@ -18,15 +18,13 @@ Console.WriteLine("\nA ile kg:");
 string clientChooseOfQty;
 clientChooseOfQty = Console.ReadLine();
 
- void Faktura()
+ void PrintInvoice()
 {
     string document = "FAKTURA";
     string placeOf = "Miejsce wystawienia";
     string city = "Gniezno";
     string headingDate = "Data wystawienia";
-    DateTime thisDay = DateTime.Today;
-    string dataDay = ToString.thisDay;
-
+    string thisDay = DateTime.Today.ToString();
 
     Console.WriteLine($"\n\t\t{document}\n");
     var lineFirst = placeOf.PadRight(22);
@@ -35,10 +33,6 @@ clientChooseOfQty = Console.ReadLine();
     Console.WriteLine("");
 
     var secodLine = city.PadRight(22);
-    
-
-
-
 }
 
 
