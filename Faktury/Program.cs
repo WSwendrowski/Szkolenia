@@ -32,7 +32,8 @@ clientChooseOfQty = Console.ReadLine();
     Console.WriteLine(lineFirst);
     Console.WriteLine("");
 
-    var secodLine = city.PadRight(22);
+    var secodLine = headingDate.PadRight(22); ;
+    secodLine += thisDay.PadRight(34);
 }
 
 
