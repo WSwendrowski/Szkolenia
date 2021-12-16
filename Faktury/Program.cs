@@ -1,4 +1,7 @@
-﻿Console.WriteLine(@"Witaj w programie do  sprzedaży pyrów i cebuli by Eduardo ""StojącaPała"" Leszczo.");
+﻿using System.IO;
+
+
+Console.WriteLine(@"Witaj w programie do  sprzedaży pyrów i cebuli by Eduardo ""StojącaPała"" Leszczo.");
 const decimal priceOnion = 3.99m;
 const decimal pricePotatos = 1.68m;
 
@@ -18,6 +21,10 @@ Console.WriteLine("\nA ile kg:");
 string clientChooseOfQty;
 clientChooseOfQty = Console.ReadLine();
 
+decimal itemPrice = clientChooseofItem == "1" ? priceOnion : pricePotatos;
+
+PrintInvoice();
+
  void PrintInvoice()
 {
     string document = "FAKTURA";
@@ -25,15 +32,31 @@ clientChooseOfQty = Console.ReadLine();
     string city = "Gniezno";
     string headingDate = "Data wystawienia";
     string thisDay = DateTime.Today.ToString();
+    string itemName = "Nazwa towaru";
+    string namePrice = "Cena: ";
 
     Console.WriteLine($"\n\t\t{document}\n");
-    var lineFirst = placeOf.PadRight(22);
-    lineFirst += city.PadRight(34);
-    Console.WriteLine(lineFirst);
+    var firstLine = placeOf.PadRight(22);
+    firstLine += city.PadRight(34);
+    Console.WriteLine(firstLine);
     Console.WriteLine("");
 
-    var secodLine = headingDate.PadRight(22); ;
-    secodLine += thisDay.PadRight(34);
+    var secondLine = headingDate.PadRight(22); ;
+    secondLine += thisDay.PadRight(34);
+    Console.WriteLine(secondLine);
+    Console.WriteLine("");
+
+    var thirdLine = itemName.PadRight(22);
+    thirdLine += clientChooseofItem.PadRight(34);
+    Console.WriteLine(thirdLine);
+    Console.WriteLine("");
+
+    var forthLine = namePrice.PadRight(22);
+    forthLine += itemPrice.ToString().PadRight(34);
+    Console.WriteLine(forthLine);
+    Console.WriteLine("");
+
+    //File.WriteAllText("faktury.txt", document );
 }
 
 
