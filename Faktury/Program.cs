@@ -22,41 +22,43 @@ string clientChooseOfQty;
 clientChooseOfQty = Console.ReadLine();
 
 decimal itemPrice = clientChooseofItem == "1" ? priceOnion : pricePotatos;
+string itemName = clientChooseofItem == "1" ? "Cebula" : "Pyry";
 
-PrintInvoice();
+var content = ComposeInvoiceContent();
 
- void PrintInvoice()
+Console.WriteLine(content);
+SaveInvoice(content);
+
+string ComposeInvoiceContent()
+
 {
     string document = "FAKTURA";
     string placeOf = "Miejsce wystawienia";
     string city = "Gniezno";
     string headingDate = "Data wystawienia";
     string thisDay = DateTime.Today.ToString();
-    string itemName = "Nazwa towaru";
+    string itemNamespace = "Nazwa towaru";
     string namePrice = "Cena: ";
 
-    Console.WriteLine($"\n\t\t{document}\n");
+    var headerLine = $"\n\t\t{document}\n";
+   
     var firstLine = placeOf.PadRight(22);
     firstLine += city.PadRight(34);
-    Console.WriteLine(firstLine);
-    Console.WriteLine("");
 
     var secondLine = headingDate.PadRight(22); ;
     secondLine += thisDay.PadRight(34);
-    Console.WriteLine(secondLine);
-    Console.WriteLine("");
 
-    var thirdLine = itemName.PadRight(22);
-    thirdLine += clientChooseofItem.PadRight(34);
-    Console.WriteLine(thirdLine);
-    Console.WriteLine("");
+    var thirdLine = itemNamespace.PadRight(22);
+    thirdLine += itemName.PadRight(34);
 
-    var forthLine = namePrice.PadRight(22);
-    forthLine += itemPrice.ToString().PadRight(34);
-    Console.WriteLine(forthLine);
-    Console.WriteLine("");
+    var fourthLine = namePrice.PadRight(22);
+    fourthLine += itemPrice.ToString().PadRight(34);
 
-    //File.WriteAllText("faktury.txt", document );
+    var content = string.Join("\n", new string[] { headerLine, firstLine, secondLine, thirdLine, fourthLine });
+    return content;
 }
 
-
+void SaveInvoice(string content)
+{
+        File.WriteAllText("faktury.txt", content);
+}
