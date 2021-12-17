@@ -4,6 +4,7 @@
 Console.WriteLine(@"Witaj w programie do  sprzedaży pyrów i cebuli by Eduardo ""StojącaPała"" Leszczo.");
 const decimal priceOnion = 3.99m;
 const decimal pricePotatos = 1.68m;
+bool finishShoping = false;
 
 
 Console.WriteLine("");
@@ -25,12 +26,12 @@ decimal itemPrice = clientChooseofItem == "1" ? priceOnion : pricePotatos;
 string itemName = clientChooseofItem == "1" ? "Cebula" : "Pyry";
 
 var content = ComposeInvoiceContent();
+var amount = AmountOfMoney();
 
 Console.WriteLine(content);
 SaveInvoice(content);
 
 string ComposeInvoiceContent()
-
 {
     string document = "FAKTURA";
     string placeOf = "Miejsce wystawienia";
@@ -54,8 +55,18 @@ string ComposeInvoiceContent()
     var fourthLine = namePrice.PadRight(22);
     fourthLine += itemPrice.ToString().PadRight(34);
 
-    var content = string.Join("\n", new string[] { headerLine, firstLine, secondLine, thirdLine, fourthLine });
+    var fifthLine = "Wartość z VATem:".PadRight(22);
+    fifthLine += amount.ToString().PadRight(22);
+
+    var content = string.Join("\n", new string[] { headerLine, firstLine, secondLine, thirdLine, fourthLine , fifthLine });
     return content;
+}
+
+decimal AmountOfMoney(decimal itemPrice)
+{
+    decimal amount = 0;
+    amount = itemPrice * 1.24m;
+    return amount;
 }
 
 void SaveInvoice(string content)

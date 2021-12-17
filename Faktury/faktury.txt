@@ -2,6 +2,6 @@
 		FAKTURA
 
 Miejsce wystawienia   Gniezno                           
-Data wystawienia      16.12.2021 00:00:00               
+Data wystawienia      17.12.2021 00:00:00               
 Nazwa towaru          Pyry                              
 Cena:                 1,68                              
