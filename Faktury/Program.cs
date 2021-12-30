@@ -21,7 +21,7 @@ clientChooseofItem = Console.ReadLine();
 
 Console.WriteLine("\nA ile kg:");
 
-string clientChooseOfQty;
+var clientChooseOfQty;
 clientChooseOfQty = Console.ReadLine();
 
 switch (clientChooseofItem)
@@ -42,12 +42,12 @@ switch (clientChooseofItem)
 }
 
 var content = ComposeInvoiceContent();
-//var amount = AmountOfMoney();
+var amount = AmountOfMoney();
 
 Console.WriteLine(content);
 SaveInvoice(content);
 
-string ComposeInvoiceContent()
+string ComposeInvoiceContent(string itemName, decimal itemPrice, decimal amount)
 {
     string document = "FAKTURA";
     string placeOf = "Miejsce wystawienia";
@@ -71,19 +71,18 @@ string ComposeInvoiceContent()
     var fourthLine = namePrice.PadRight(22);
     fourthLine += itemPrice.ToString().PadRight(34);
 
-    //var fifthLine = "Wartość z VATem:".PadRight(22);
-    //fifthLine += amount.ToString().PadRight(22);
+    var fifthLine = "Wartość z VATem:".PadRight(22);
+    fifthLine += amount.ToString().PadRight(22);
 
-    var content = string.Join("\n", new string[] { headerLine, firstLine, secondLine, thirdLine, fourthLine });
+    var content = string.Join("\n", new string[] { headerLine, firstLine, secondLine, thirdLine, fourthLine, fifthLine });
     return content;
 }
 
-//decimal AmountOfMoney(decimal itemPrice)
-//{
-//    decimal amount = 0;
-//    amount = itemPrice * 1.24m;
-//    return amount;
-//}
+decimal AmountOfMoney(decimal itemPrice, decimal clientChooseOfQty)
+{
+    amount = itemPrice * 1.23m * clientChooseOfQty;
+    return amount;
+}
 
 void SaveInvoice(string content)
 {
