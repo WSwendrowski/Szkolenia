@@ -21,8 +21,10 @@ clientChooseofItem = Console.ReadLine();
 
 Console.WriteLine("\nA ile kg:");
 
-var clientChooseOfQty;
-clientChooseOfQty = Console.ReadLine();
+string clientChooseOfQtyString;
+clientChooseOfQtyString = Console.ReadLine();
+decimal clientChooseOfQty = Convert.ToDecimal(clientChooseOfQtyString);
+
 
 switch (clientChooseofItem)
 {
