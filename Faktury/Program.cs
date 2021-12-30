@@ -5,6 +5,8 @@ Console.WriteLine(@"Witaj w programie do  sprzedaży pyrów i cebuli by Eduardo 
 const decimal priceOnion = 3.99m;
 const decimal pricePotatos = 1.68m;
 bool finishShoping = false;
+decimal itemPrice;
+string itemName;
 
 
 Console.WriteLine("");
@@ -22,11 +24,25 @@ Console.WriteLine("\nA ile kg:");
 string clientChooseOfQty;
 clientChooseOfQty = Console.ReadLine();
 
-decimal itemPrice = clientChooseofItem == "1" ? priceOnion : pricePotatos;
-string itemName = clientChooseofItem == "1" ? "Cebula" : "Pyry";
+switch (clientChooseofItem)
+{
+        case "1":
+            itemName = "Cebula";
+            itemPrice = priceOnion;
+        break;
+
+        case "2":
+            itemName = "Pyry";
+            itemPrice = pricePotatos;
+        break;
+
+        default:
+        Console.WriteLine("Chcesz coś czy nie?");
+        break;
+}
 
 var content = ComposeInvoiceContent();
-var amount = AmountOfMoney();
+//var amount = AmountOfMoney();
 
 Console.WriteLine(content);
 SaveInvoice(content);
@@ -55,19 +71,19 @@ string ComposeInvoiceContent()
     var fourthLine = namePrice.PadRight(22);
     fourthLine += itemPrice.ToString().PadRight(34);
 
-    var fifthLine = "Wartość z VATem:".PadRight(22);
-    fifthLine += amount.ToString().PadRight(22);
+    //var fifthLine = "Wartość z VATem:".PadRight(22);
+    //fifthLine += amount.ToString().PadRight(22);
 
-    var content = string.Join("\n", new string[] { headerLine, firstLine, secondLine, thirdLine, fourthLine , fifthLine });
+    var content = string.Join("\n", new string[] { headerLine, firstLine, secondLine, thirdLine, fourthLine });
     return content;
 }
 
-decimal AmountOfMoney(decimal itemPrice)
-{
-    decimal amount = 0;
-    amount = itemPrice * 1.24m;
-    return amount;
-}
+//decimal AmountOfMoney(decimal itemPrice)
+//{
+//    decimal amount = 0;
+//    amount = itemPrice * 1.24m;
+//    return amount;
+//}
 
 void SaveInvoice(string content)
 {

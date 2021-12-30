@@ -2,6 +2,6 @@
 		FAKTURA
 
 Miejsce wystawienia   Gniezno                           
-Data wystawienia      17.12.2021 00:00:00               
-Nazwa towaru          Pyry                              
-Cena:                 1,68                              
+Data wystawienia      30.12.2021 00:00:00               
+Nazwa towaru          Cebula                            
+Cena:                 3,99                              
