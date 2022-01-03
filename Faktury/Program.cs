@@ -7,6 +7,7 @@ const decimal pricePotatos = 1.68m;
 bool finishShoping = false;
 decimal itemPrice;
 string itemName;
+decimal amount = 0;
 
 
 Console.WriteLine("");
@@ -39,12 +40,14 @@ switch (clientChooseofItem)
         break;
 
         default:
+        itemName = "dupa";
+            itemPrice = 0;
         Console.WriteLine("Chcesz coś czy nie?");
         break;
 }
 
-var content = ComposeInvoiceContent();
-var amount = AmountOfMoney();
+var content = ComposeInvoiceContent(itemName, itemPrice, amount);
+amount = AmountOfMoney(itemPrice, clientChooseOfQty);
 
 Console.WriteLine(content);
 SaveInvoice(content);
@@ -80,9 +83,9 @@ string ComposeInvoiceContent(string itemName, decimal itemPrice, decimal amount)
     return content;
 }
 
-decimal AmountOfMoney(decimal itemPrice, decimal clientChooseOfQty)
+decimal AmountOfMoney(decimal itemPrice, decimal quantity)
 {
-    amount = itemPrice * 1.23m * clientChooseOfQty;
+    amount = itemPrice * 1.23m * quantity;
     return amount;
 }
 
