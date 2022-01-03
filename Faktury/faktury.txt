@@ -5,4 +5,4 @@ Miejsce wystawienia   Gniezno
 Data wystawienia      03.01.2022 00:00:00               
 Nazwa towaru          Pyry                              
 Cena:                 1,68                              
-Wartość z VATem:      0                     
+Wartość z VATem:      22,7304               

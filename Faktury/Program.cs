@@ -5,7 +5,7 @@ Console.WriteLine(@"Witaj w programie do  sprzedaży pyrów i cebuli by Eduardo 
 const decimal priceOnion = 3.99m;
 const decimal pricePotatos = 1.68m;
 bool finishShoping = false;
-decimal itemPrice;
+decimal price;
 string itemName;
 decimal amount = 0;
 
@@ -31,23 +31,24 @@ switch (clientChooseofItem)
 {
         case "1":
             itemName = "Cebula";
-            itemPrice = priceOnion;
+            price = priceOnion;
         break;
 
         case "2":
             itemName = "Pyry";
-            itemPrice = pricePotatos;
+            price = pricePotatos;
         break;
 
         default:
         itemName = "dupa";
-            itemPrice = 0;
+            price = 0;
         Console.WriteLine("Chcesz coś czy nie?");
         break;
 }
 
-var content = ComposeInvoiceContent(itemName, itemPrice, amount);
-amount = AmountOfMoney(itemPrice, clientChooseOfQty);
+amount = AmountOfMoney(price, clientChooseOfQty);
+var content = ComposeInvoiceContent(itemName, price, amount);
+
 
 Console.WriteLine(content);
 SaveInvoice(content);
