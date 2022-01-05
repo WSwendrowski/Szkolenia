@@ -3,6 +3,6 @@
 
 Miejsce wystawienia   Gniezno                           
 Data wystawienia      05.01.2022 00:00:00               
-Nazwa towaru          Pyry                              
-Cena:                 1,68                              
-Wartość z VATem:      66,12 zł              
+Nazwa towaru          dupa                              
+Cena:                 0,00 zł                           
+Wartość z VATem:      0,00 zł               

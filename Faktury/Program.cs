@@ -4,28 +4,28 @@
 Console.WriteLine(@"Witaj w programie do  sprzedaży pyrów i cebuli by Eduardo ""StojącaPała"" Leszczo.");
 const decimal priceOnion = 3.99m;
 const decimal pricePotatos = 1.68m;
+const decimal priceBeetroot = 2.61m;
 bool finishShoping = false;
 decimal price;
 string itemName;
 decimal amount = 0;
 
+    Console.WriteLine("");
+    Console.WriteLine("\tChcesz kupić cebulę (1), pyry (2), czy buroki (3)?");
+    Console.WriteLine("");
+    Console.WriteLine($"Cena netto cebuli:\t {priceOnion} PLN");
+    Console.WriteLine($"Cena netto pyrów:\t {pricePotatos} PLN");
+    Console.WriteLine($"Cena netto buroków:\t {priceBeetroot} PLN\n");
+    Console.WriteLine("Przyszłem po:");
 
-Console.WriteLine("");
-Console.WriteLine("\tChcesz kupić cebulę (1) czy pyry (2)?");
-Console.WriteLine("");
-Console.WriteLine($"Cena netto cebuli:\t {priceOnion} PLN");
-Console.WriteLine($"Cena netto pyrów:\t {pricePotatos} PLN\n");
-Console.WriteLine("Przyszłem po:");
+    string clientChooseofItem;
+    clientChooseofItem = Console.ReadLine();
 
-string clientChooseofItem;
-clientChooseofItem = Console.ReadLine();
+    Console.WriteLine("\nA ile kg:");
 
-Console.WriteLine("\nA ile kg:");
-
-string clientChooseOfQtyString;
-clientChooseOfQtyString = Console.ReadLine();
-decimal clientChooseOfQty = Convert.ToDecimal(clientChooseOfQtyString);
-
+    string clientChooseOfQtyString;
+    clientChooseOfQtyString = Console.ReadLine();
+    decimal clientChooseOfQty = Convert.ToDecimal(clientChooseOfQtyString);
 
 switch (clientChooseofItem)
 {
@@ -37,6 +37,11 @@ switch (clientChooseofItem)
         case "2":
             itemName = "Pyry";
             price = pricePotatos;
+        break;
+
+        case "3":
+        itemName = "Buroki";
+        price = priceBeetroot;
         break;
 
         default:
