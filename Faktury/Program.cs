@@ -75,10 +75,10 @@ string ComposeInvoiceContent(string itemName, decimal itemPrice, decimal amount)
     thirdLine += itemName.PadRight(34);
 
     var fourthLine = namePrice.PadRight(22);
-    fourthLine += itemPrice.ToString().PadRight(34);
+    fourthLine += itemPrice.ToString("C2").PadRight(34);
 
-    var fifthLine = "Wartość z VATem:".PadRight(22);
-    fifthLine += amount.ToString().PadRight(22);
+    var fifthLine = "Wartość z VATem: ".PadRight(22);
+    fifthLine += amount.ToString("C2").PadRight(22);
 
     var content = string.Join("\n", new string[] { headerLine, firstLine, secondLine, thirdLine, fourthLine, fifthLine });
     return content;
@@ -87,7 +87,7 @@ string ComposeInvoiceContent(string itemName, decimal itemPrice, decimal amount)
 decimal AmountOfMoney(decimal itemPrice, decimal quantity)
 {
     amount = itemPrice * 1.23m * quantity;
-    return amount;
+      return amount;
 }
 
 void SaveInvoice(string content)
